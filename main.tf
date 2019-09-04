@@ -168,9 +168,10 @@ module "alb" {
   version = "v4.0.0"
 
   load_balancer_name = var.name
+  load_balancer_is_internal = var.alb_is_internal
 
   vpc_id          = local.vpc_id
-  subnets         = local.public_subnet_ids
+  subnets         = var.alb_is_internal ? local.private_subnet_ids : local.public_subnet_ids
   security_groups = flatten([module.alb_https_sg.this_security_group_id, module.alb_http_sg.this_security_group_id, var.security_group_ids])
 
   logging_enabled     = var.alb_logging_enabled

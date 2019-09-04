@@ -60,6 +60,12 @@ variable "alb_ingress_cidr_blocks" {
   default     = ["0.0.0.0/0"]
 }
 
+variable "alb_is_internal" {
+  description = "Boolean determining if the load balancer is internal or externally facing."
+  type        = bool
+  default     = false
+}
+
 variable "alb_log_bucket_name" {
   description = "S3 bucket (externally created) for storing load balancer access logs. Required if alb_logging_enabled is true."
   type        = string

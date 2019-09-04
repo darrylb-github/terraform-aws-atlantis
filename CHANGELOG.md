@@ -1,7 +1,7 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-
+- Add an option to make the alb internal.
 
 <a name="v2.2.0"></a>
 ## [v2.2.0] - 2019-07-21
